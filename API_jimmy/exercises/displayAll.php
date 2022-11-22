@@ -8,9 +8,8 @@ require_once "toolBox.php";
 if ($_SERVER['REQUEST_METHOD'] === "GET") {
     $sql = "SELECT * FROM car";
     $result = mysqli_query($connect, $sql);
-
+    $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
     if ($result) {
-        $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
         response(200, "Data fetched succesfully", $row);
     } else {
         response(400, "There was an error!");

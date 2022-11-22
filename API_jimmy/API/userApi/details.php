@@ -6,7 +6,7 @@ require_once "db_connect.php";
 require_once "toolBox.php";
 
 if ($_SERVER['REQUEST_METHOD'] === "GET") {
-    $sql = "SELECT * FROM users WHERE id= $_GET[id]";
+    $sql = "SELECT * FROM cars WHERE id= $_GET[id]";
     $result = mysqli_query($connect, $sql);
 
     if ($result) {
